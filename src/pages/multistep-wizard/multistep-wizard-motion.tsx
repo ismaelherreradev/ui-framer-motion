@@ -67,15 +67,18 @@ const checkIconVariants = {
 };
 
 function Step({ step, currentStep }: StepProps): JSX.Element {
+  // The status is determined by the current step
   const status = currentStep === step ? "active" : currentStep < step ? "inactive" : "complete";
 
   return (
     <motion.div animate={status} className="relative">
+      {/* The ripple is displayed when the step is active */}
       <motion.div
         variants={rippleVariants}
         transition={rippleTransition}
         className="absolute inset-0 rounded-full bg-blue-200"
       />
+      {/* The background is displayed behind the step number */}
       <motion.div
         initial={false}
         variants={backgroundVariants}
@@ -89,8 +92,10 @@ function Step({ step, currentStep }: StepProps): JSX.Element {
         <div className="relative flex items-center justify-center">
           <AnimatePresence>
             {status === "complete" ? (
+              // If the status is complete, display the check icon
               <CheckIcon className="h-6 w-6 text-white" />
             ) : (
+              // If the status is not complete, display the step number
               <motion.span key="step" animate={{ opacity: 1 }} exit={{ scale: 0.5, opacity: 0 }} className="absolute">
                 {step}
               </motion.span>
