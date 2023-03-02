@@ -36,7 +36,7 @@ export default function MultiStepWizard() {
   let [step, setStep] = useState(1);
 
   return (
-    <div className="mx-auto w-full max-w-md rounded-2xl bg-white">
+    <div className="w-full max-w-md rounded-2xl bg-white">
       <div className="flex justify-between rounded p-8">
         <Step step={1} currentStep={step} />
         <Step step={2} currentStep={step} />
