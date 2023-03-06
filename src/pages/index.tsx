@@ -19,6 +19,9 @@ export default function Home() {
               <div className="p-8">
                 <Link href={"/multistep-wizard"}>Multistep wizard</Link>
               </div>
+              <div className="p-8">
+                <Link href={"/email-client"}>Email Client</Link>
+              </div>
             </div>
           </div>
         </div>

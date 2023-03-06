@@ -7,7 +7,7 @@ type StepProps = {
   currentStep: number;
 };
 
-const time = (value: number) => 1 * value;
+const time = (value: number) => 0.5 * value;
 
 const backgroundTransition = { duration: time(0.2) };
 const backgroundVariants = {
