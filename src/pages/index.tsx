@@ -28,6 +28,12 @@ export default function Home() {
               >
                 Email Client
               </Link>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/header"}
+              >
+                Header
+              </Link>
             </div>
           </div>
         </div>
