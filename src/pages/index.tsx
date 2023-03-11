@@ -14,14 +14,20 @@ export default function Home() {
       </Head>
       <main className={inter.className}>
         <div className="flex min-h-screen items-start bg-gradient-to-r from-blue-500 to-blue-600 pt-40">
-          <div className="mx-auto w-full max-w-md rounded-2xl bg-white">
+          <div className="mx-auto w-full max-w-md overflow-hidden rounded-2xl bg-white">
             <div className="grid grid-cols-1 divide-y divide-gray-400">
-              <div className="p-8">
-                <Link href={"/multistep-wizard"}>Multistep wizard</Link>
-              </div>
-              <div className="p-8">
-                <Link href={"/email-client"}>Email Client</Link>
-              </div>
+              <Link
+                href={"/multistep-wizard"}
+                className="cursor-pointer p-8 hover:bg-slate-200"
+              >
+                Multistep wizard
+              </Link>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/email-client"}
+              >
+                Email Client
+              </Link>
             </div>
           </div>
         </div>
