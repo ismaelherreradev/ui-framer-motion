@@ -84,9 +84,13 @@ export default function EmailClientMotion(): JSX.Element {
             <AnimatePresence initial={false}>
               {[...messages].reverse().map((mid) => (
                 <motion.li
+                  // Starting state: The element is invisible and collapsed
                   initial={{ opacity: 0, height: 0 }}
+                  // When the element is visible, animate its height and opacity.
                   animate={{ opacity: 1, height: "auto" }}
+                  // When the element is not visible, animate its height and opacity.
                   exit={{ opacity: 0, height: 0 }}
+                  // Transition between the start and end state
                   transition={{ opacity: { duration: 0.2 } }}
                   key={mid}
                   className="relative"
