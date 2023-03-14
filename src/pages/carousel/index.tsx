@@ -2,6 +2,9 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useState } from "react";
 
+// @ts-ignore
+import useKeyPress from "react-use-keypress";
+
 const images = [
   "/images/1.jpeg",
   "/images/2.jpeg",
@@ -11,12 +14,27 @@ const images = [
   "/images/6.jpeg",
 ];
 
+const collapsedAspectRatio = 1 / 2;
+const fullAspectRatio = 3 / 2;
+const margin = 12;
+const gap = 2;
+
 export default function Page() {
   const [index, setIndex] = useState(0);
 
+  useKeyPress("ArrowRight", () => {
+    if (index < images.length - 1) {
+      setIndex(index + 1);
+    }
+  });
+
+  useKeyPress("ArrowLeft", () => {
+    if (index > 0) {
+      setIndex(index - 1);
+    }
+  });
+
   return (
-    // Change the duration to 0.5 seconds and set the ease to the ease-in-out
-    // curve in the Framer Motion docs
     <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
       <div className="h-screen bg-black">
         <div className="mx-auto flex h-full max-w-7xl flex-col justify-center">
@@ -29,9 +47,10 @@ export default function Page() {
               className="flex"
             >
               {images.map((image, i) => (
-                <img
+                <motion.img
                   key={i}
                   src={image}
+                  animate={{ opacity: i === index ? 1 : 0.3 }}
                   className="aspect-[3/2] object-cover"
                 />
               ))}
@@ -73,6 +92,66 @@ export default function Page() {
                 </motion.button>
               )}
             </AnimatePresence>
+          </div>
+          <div className="absolute inset-x-0 bottom-6 flex h-28 justify-center overflow-hidden">
+            <motion.div
+              initial={false}
+              animate={{
+                x: `-${
+                  // calculate the total width of the previous items
+                  index * 100 * (collapsedAspectRatio / fullAspectRatio) +
+                  // add the margin for the current item
+                  margin +
+                  // add the gap for the current item
+                  index +
+                  gap
+                }%`,
+              }}
+              style={{
+                // set the aspect ratio for the current item
+                aspectRatio: fullAspectRatio,
+                // set the gap between items
+                gap: `${gap}%`,
+              }}
+              className="flex"
+            >
+              {images.map((image, i) => (
+                <motion.button
+                  initial={false}
+                  className="shrink-0"
+                  key={image}
+                  whileHover={{ opacity: 1 }}
+                  animate={i === index ? "active" : "inactive"}
+                  onClick={() => setIndex(i)}
+                  variants={{
+                    /* 1. Declare the `active` and `inactive` variants. */
+                    active: {
+                      /* 2. Set the `active` variant to use the `fullAspectRatio`. */
+                      aspectRatio: fullAspectRatio,
+                      /* 3. Set the `active` variant to use the `margin`. */
+                      marginLeft: `${margin}%`,
+                      marginRight: `${margin}%`,
+                      /* 4. Set the `active` variant to use an opacity of 1. */
+                      opacity: 1,
+                    },
+                    inactive: {
+                      /* 5. Set the `inactive` variant to use the `collapsedAspectRatio`. */
+                      aspectRatio: collapsedAspectRatio,
+                      /* 6. Set the `inactive` variant to use zero margins. */
+                      marginLeft: 0,
+                      marginRight: 0,
+                      /* 7. Set the `inactive` variant to use an opacity of 0.5. */
+                      opacity: 0.5,
+                    },
+                  }}
+                >
+                  <img
+                    src={image}
+                    className="aspect-[3/2] h-full object-cover"
+                  />
+                </motion.button>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
