@@ -34,6 +34,12 @@ export default function Home() {
               >
                 Header
               </Link>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/carousel"}
+              >
+                Carousel
+              </Link>
             </div>
           </div>
         </div>
