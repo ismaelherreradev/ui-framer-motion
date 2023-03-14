@@ -113,7 +113,7 @@ export default function Page() {
                 // set the gap between items
                 gap: `${gap}%`,
               }}
-              className="flex"
+              className="flex h-14"
             >
               {images.map((image, i) => (
                 <motion.button
