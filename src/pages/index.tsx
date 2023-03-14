@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={inter.className}>
-        <div className="flex min-h-screen items-start bg-gradient-to-r from-blue-500 to-blue-600 pt-40 px-6">
+        <div className="flex min-h-screen items-start bg-gradient-to-r from-blue-500 to-blue-600 px-6 pt-40">
           <div className="mx-auto w-full max-w-md overflow-hidden rounded-2xl bg-white">
             <div className="grid grid-cols-1 divide-y divide-gray-400">
               <Link
@@ -39,6 +39,12 @@ export default function Home() {
                 href={"/carousel"}
               >
                 Carousel
+              </Link>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/resizable-panel"}
+              >
+                Resizable Panel
               </Link>
             </div>
           </div>
