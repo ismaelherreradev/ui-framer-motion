@@ -46,6 +46,12 @@ export default function Home() {
               >
                 Resizable Panel
               </Link>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/calendar"}
+              >
+                Calendar
+              </Link>
             </div>
           </div>
         </div>
