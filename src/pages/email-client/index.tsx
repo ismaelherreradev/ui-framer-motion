@@ -130,7 +130,7 @@ export function EmailClientMotion(): JSX.Element {
           </ul>
         </div>
         <div className="flex-1 overflow-y-scroll border-l px-8 py-8">
-          <h1 className="h-8 rounded bg-slate-100 text-2xl font-bold" />
+          {/* <h1 className="h-8 rounded bg-slate-100 text-2xl font-bold" /> */}
           <div className="mt-8 space-y-6">
             {[...Array.from(Array(9).keys())].map((i) => (
               <div key={i} className="space-y-2 text-sm">
