@@ -56,6 +56,10 @@ export default function Home() {
                 href={"/animated-tabs"}>
                 Animated Tabs
               </Link>
+              <Link  className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/animated-toggle"}>
+                Animated Toggle
+              </Link>
             </div>
           </div>
         </div>
