@@ -60,6 +60,10 @@ export default function Home() {
                 href={"/animated-toggle"}>
                 Animated Toggle
               </Link>
+              <Link  className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/trello-checklist"}>
+                Trello Checklist
+              </Link>
             </div>
           </div>
         </div>
