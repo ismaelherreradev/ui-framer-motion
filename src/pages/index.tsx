@@ -64,6 +64,10 @@ export default function Home() {
                 href={"/trello-checklist"}>
                 Trello Checklist
               </Link>
+              <Link  className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/radix-dropdown"}>
+                Radix Dropdown
+              </Link>
             </div>
           </div>
         </div>
