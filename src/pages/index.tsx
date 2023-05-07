@@ -52,21 +52,35 @@ export default function Home() {
               >
                 Calendar
               </Link>
-              <Link  className="cursor-pointer p-8 hover:bg-slate-200"
-                href={"/animated-tabs"}>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/animated-tabs"}
+              >
                 Animated Tabs
               </Link>
-              <Link  className="cursor-pointer p-8 hover:bg-slate-200"
-                href={"/animated-toggle"}>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/animated-toggle"}
+              >
                 Animated Toggle
               </Link>
-              <Link  className="cursor-pointer p-8 hover:bg-slate-200"
-                href={"/trello-checklist"}>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/trello-checklist"}
+              >
                 Trello Checklist
               </Link>
-              <Link  className="cursor-pointer p-8 hover:bg-slate-200"
-                href={"/radix-dropdown"}>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/radix-dropdown"}
+              >
                 Radix Dropdown
+              </Link>
+              <Link
+                className="cursor-pointer p-8 hover:bg-slate-200"
+                href={"/card-radial-gradient"}
+              >
+                Card Radial Gradient
               </Link>
             </div>
           </div>
